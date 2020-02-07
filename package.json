@@ -22,6 +22,10 @@
     "email": "frenco.willian@gmail.com",
     "url": "https://www.frenco.codes"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "devDependencies": {
     "@yarnpkg/pnpify": "^2.0.0-rc.17",
     "prettier": "^1.19.1",
