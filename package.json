@@ -1,7 +1,7 @@
 {
   "name": "burmese-random-words",
   "description": "Generate one or more random common Burmese words.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
