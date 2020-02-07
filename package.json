@@ -1,0 +1,30 @@
+{
+  "name": "burmese-random-words",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "develop": "tsc -w",
+    "pub": "yarn run build && np"
+  },
+  "files": [
+    "dist",
+    "readme.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frencojobs/burmese-random-words.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Frenco Jobs",
+    "email": "frenco.willian@gmail.com",
+    "url": "https://www.frenco.codes"
+  },
+  "devDependencies": {
+    "@yarnpkg/pnpify": "^2.0.0-rc.17",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  }
+}

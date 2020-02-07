@@ -1,0 +1,74 @@
+#!/usr/bin/env node
+
+const { promises: fs } = require('fs')
+
+// Regular Expression used to generate this map from
+// myanmar-tools/myanmar-words repository
+// (('\D+'):('[a-z-A-Z]*')) => $3: $2
+
+const types = {
+  nouns: 'နာမ်များ',
+  pronouns: 'နာမ်စားများ',
+  verbs: 'ကြိယာများ',
+  adjectives: 'နာမဝိသေသနများ',
+  adverbs: 'ကြိယာဝိသေသနများ',
+  postpositions: 'ဝိဘတ်များ',
+  conjunctions: 'သမ္ဗန္ဓများ',
+  particles: 'ပစ္စည်းများ',
+  interjections: 'အာမေဍိတ်များ'
+}
+
+// Expected output
+// data/nouns.js
+// {'က': [...]}
+
+const output = {
+  nouns: {},
+  pronouns: {},
+  verbs: {},
+  adjectives: {},
+  adverbs: {},
+  postpositions: {},
+  conjunctions: {},
+  particles: {},
+  interjections: {}
+}
+
+;(async function main() {
+  for (const type of Object.keys(types)) {
+    const dir_url = `./${types[type]}`
+    try {
+      const files = (await fs.readdir(dir_url)).filter(
+        file => file !== 'README.md'
+      )
+
+      for (const file of files) {
+        const file_key = file.split('-')[0]
+        const file_url = `${dir_url}/${file}`
+
+        const file_data = await fs.readFile(file_url, { encoding: 'utf-8' })
+
+        output[type][file_key] = file_data
+          .split('\n')
+          .map(v => v.trim())
+          .filter(v => !!v)
+      }
+    } catch (error) {
+      throw Error('Cannot read directory - ', error)
+    }
+  }
+
+  try {
+    await fs.mkdir('data')
+  } catch (error) {
+  } finally {
+    // file exists probably
+
+    for (const file of Object.keys(output)) {
+      const file_url = `./data/${file}.json`
+      await fs.writeFile(file_url, JSON.stringify(output[file]))
+    }
+
+    console.log('Data mapped successfully!')
+  }
+})()

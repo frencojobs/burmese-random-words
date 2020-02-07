@@ -1,0 +1,11 @@
+# yarn
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
+
+# npm
+node_modules
+
+# build
+dist
