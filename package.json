@@ -1,11 +1,12 @@
 {
   "name": "burmese-random-words",
+  "description": "Generate one or more random common Burmese words.",
   "version": "0.0.1",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "develop": "tsc -w",
-    "pub": "yarn run build && np"
+    "pub": "yarn run build && np --no-yarn"
   },
   "files": [
     "dist",
