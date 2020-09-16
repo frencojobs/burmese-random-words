@@ -7,7 +7,7 @@ import * as postpositions from './data/postpositions.json'
 import * as conjunctions from './data/conjunctions.json'
 import * as particles from './data/particles.json'
 import * as interjections from './data/interjections.json'
-import type { Options} from 'types/index'
+import type { Options} from 'types'
 
 const types = {
   noun: nouns,
