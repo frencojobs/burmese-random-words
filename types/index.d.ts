@@ -14,3 +14,7 @@ export interface Options {
   exactly?: number
   join?: string
 }
+
+declare module 'burmese-random-words' {
+  export function generate(options?: number | Options): string
+}
