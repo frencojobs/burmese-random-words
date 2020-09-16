@@ -13,49 +13,49 @@ yarn add burmese-random-words
 ## Usage
 
 ```js
-const burmeseRandomWords = require('burmese-random-words')
+const { generate } = require('burmese-random-words')
 
-console.log(burmeseRandomWords())
+console.log(generate())
 // 'ပထမပြန်စာမေးပွဲ'
 ```
 
 ## Examples
 
 ```js
-const burmeseRandomWords = require('burmese-random-words')
+const { generate } = require('burmese-random-words')
 
-console.log(burmeseRandomWords())
+console.log(generate())
 // 'ရိတ်သိမ်း'
 
-console.log(burmeseRandomWords(3))
+console.log(generate(3))
 // [ 'ရော', 'တောင်ခါးပန်း', 'တိုင်းထွာ' ]
 
-console.log(burmeseRandomWords({ min: 2, max: 7 }))
+console.log(generate({ min: 2, max: 7 }))
 // [ 'ရမန်ခံ', 'ကာယ', 'ဦးရာလူ', 'မီးဖောင်' ]
 
-console.log(burmeseRandomWords({ exactly: 3 }))
+console.log(generate({ exactly: 3 }))
 // [ 'ပဋ္ဌာန်း', 'ငှက်ပြာစိတ်', 'အစေ့အိမ်' ]
 
-console.log(burmeseRandomWords({ type: 'noun', exactly: 5 }))
+console.log(generate({ type: 'noun', exactly: 5 }))
 // [ 'အခိုင်', 'မဏိတော်', 'ဒဿနပညာ', 'ရတု', 'အုပ်စု' ]
 
-console.log(burmeseRandomWords({ type: 'noun', exactly: 2, join: ' နှင့် ' }))
+console.log(generate({ type: 'noun', exactly: 2, join: ' နှင့် ' }))
 // 'ပန်းတည်ခုံ နှင့် ကျောင်းထိုင်ဆရာတော်'
 
 console.log(
-  burmeseRandomWords({ type: 'adjective' }) +
+  generate({ type: 'adjective' }) +
     'သော ' +
-    burmeseRandomWords({ type: 'verb' }) +
+    generate({ type: 'verb' }) +
     'ခြင်း '
 )
 // 'ရွှေရည်စိမ်သော ဥပဒေပြုခြင်း '
 
 console.log(
-  burmeseRandomWords({ type: 'noun' }) +
+  generate({ type: 'noun' }) +
     'က ' +
-    burmeseRandomWords({ type: 'noun' }) +
+    generate({ type: 'noun' }) +
     'ကို ' +
-    burmeseRandomWords({ type: 'verb' }) +
+    generate({ type: 'verb' }) +
     'တယ်။ '
 )
 

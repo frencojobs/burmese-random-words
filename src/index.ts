@@ -65,7 +65,7 @@ function rand(options: Options): Array<string> | string {
   return outputWords.length === 1 ? outputWords[0] : outputWords
 }
 
-function burmeseRandomWords(
+export function generate(
   options?: number | Options
 ): Array<string> | string {
   if (typeof options === 'undefined') {
@@ -82,5 +82,3 @@ function burmeseRandomWords(
 
   return rand({ exactly: 1 })
 }
-
-export = burmeseRandomWords
