@@ -1,8 +1,9 @@
 {
   "name": "burmese-random-words",
   "description": "Generate one or more random common Burmese words.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/index.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "build": "tsc",
     "develop": "tsc -w",
@@ -27,7 +28,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "@yarnpkg/pnpify": "^2.0.0-rc.17",
     "prettier": "^1.19.1",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"

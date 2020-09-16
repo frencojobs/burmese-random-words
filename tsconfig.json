@@ -5,7 +5,8 @@
     "strict": true,
     "outDir": "dist",
     "sourceMap": false,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": "."
   },
   "include": ["src/**/*"]
 }

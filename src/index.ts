@@ -7,6 +7,7 @@ import * as postpositions from './data/postpositions.json'
 import * as conjunctions from './data/conjunctions.json'
 import * as particles from './data/particles.json'
 import * as interjections from './data/interjections.json'
+import type { Options} from 'types/index'
 
 const types = {
   noun: nouns,
@@ -29,23 +30,6 @@ const types = {
     ...particles,
     ...interjections
   ]
-}
-
-interface Options {
-  type?:
-    | 'noun'
-    | 'pronoun'
-    | 'verb'
-    | 'adjective'
-    | 'adverb'
-    | 'postposition'
-    | 'conjunction'
-    | 'particle'
-    | 'interjection'
-  min?: number
-  max?: number
-  exactly?: number
-  join?: string
 }
 
 function randInt(min: number, max: number) {
@@ -82,7 +66,7 @@ function rand(options: Options): Array<string> | string {
 }
 
 function burmeseRandomWords(
-  options: undefined | number | Options
+  options?: number | Options
 ): Array<string> | string {
   if (typeof options === 'undefined') {
     return rand({ exactly: 1 })
